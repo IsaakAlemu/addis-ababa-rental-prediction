@@ -23,19 +23,13 @@ An end-to-end data science project that scrapes, cleans, explores, and models re
 house_project/
 
 ├── scrape_listings.py      # Selenium scraper, all 11 sub-cities
-
 ├── clean_data.py           # Parses raw text into structured columns
-
-├── clean_listings.csv      # Final cleaned dataset (output of clean_data.py)
-
+├── test_clean_data.py      # Unit tests for clean_data.py's parser
+├── clean_listings.csv       # Final cleaned dataset (output of clean_data.py)
 ├── eda.ipynb                # Exploratory analysis, 5 sections
-
 ├── modeling.ipynb           # Feature engineering, Linear/Ridge regression
-
 ├── requirements.txt
-
 ├── .gitignore
-
 └── README.md
 
 ## Setup & Installation
