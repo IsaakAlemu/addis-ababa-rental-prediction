@@ -10,6 +10,7 @@ An end-to-end data science project that scrapes, cleans, explores, and models re
 - **Data processing:** pandas, regex
 - **Analysis & Modeling:** pandas, matplotlib, scikit-learn (Linear Regression, Ridge Regression, OneHotEncoder)
 - **Environment:** Jupyter Notebook
+- **CI/CD:** GitHub Actions (automated test runs on every push)
 
 ## Data
 - **Source:** [Jiji.com.et](https://jiji.com.et), Ethiopia's largest classifieds platform
@@ -25,6 +26,7 @@ house_project/
 ├── scrape_listings.py      # Selenium scraper, all 11 sub-cities
 ├── clean_data.py           # Parses raw text into structured columns
 ├── test_clean_data.py      # Unit tests for clean_data.py's parser
+├── .github/workflows/tests.yml  # CI: auto-runs tests on every push
 ├── clean_listings.csv       # Final cleaned dataset (output of clean_data.py)
 ├── eda.ipynb                # Exploratory analysis, 5 sections
 ├── modeling.ipynb           # Feature engineering, Linear/Ridge regression
