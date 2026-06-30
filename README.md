@@ -1,6 +1,6 @@
 # Addis Ababa Rental Price Prediction
 
-**Status:** Complete (v1) — Linear/Ridge Regression baseline. Random Forest and Power BI dashboard planned as future work.
+**Status:** Complete (v1) — Linear/Ridge Regression baseline with Power BI dashboard. Random Forest planned as future work.
 
 ## Overview
 An end-to-end data science project that scrapes, cleans, explores, and models rental listing data for Addis Ababa, Ethiopia, to predict monthly rental price (ETB) from property characteristics and location. Built as a portfolio project to demonstrate real-world data collection (web scraping a JS-rendered site with bot detection) and a full ML pipeline from raw data to an interpretable model.
@@ -30,6 +30,7 @@ house_project/
 ├── clean_listings.csv       # Final cleaned dataset (output of clean_data.py)
 ├── eda.ipynb                # Exploratory analysis, 5 sections
 ├── modeling.ipynb           # Feature engineering, Linear/Ridge regression
+├── dashboard/                # Power BI dashboard (screenshots, .pbix, PDF export)
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -79,6 +80,29 @@ Best model: **Ridge Regression on raw price** (R² = 0.37). Log-transforming the
 
 Ridge coefficients confirm the EDA findings: property type and furnished status drive the largest price increases, while Yeka shows the steepest discount relative to the Bole baseline. Full interpretation in [`modeling.ipynb`](./modeling.ipynb).
 
+## Power BI Dashboard
+
+A 3-page interactive Power BI dashboard summarizing key insights and model performance.
+
+### Page 1: Overview
+![Overview](dashboard/overview.png)
+
+KPI summary, price distribution, and price breakdowns by location, property type, bedrooms, and furnished status.
+
+### Page 2: Sub-City Comparison
+![Sub-City Comparison](dashboard/subcity_comparison.png)
+
+Interactive sub-city filtering with listing counts, property type mix, and a full price range summary table.
+
+### Page 3: Model Performance
+![Model Performance](dashboard/model_performance.png)
+
+Predicted vs. actual rental price scatter plot, average prediction error by location group, and overall model metrics (RMSE: 96.22K ETB, R²: 0.37).
+
+**Files:**
+- [`addis_ababa_rental_dashboard.pbix`](dashboard/addis_ababa_rental_dashboard.pbix) — open in Power BI Desktop (free) for the full interactive version
+- [`addis_ababa_rental_dashboard.pdf`](dashboard/addis_ababa_rental_dashboard.pdf) — static PDF export of all 3 pages
+
 ## Key Engineering Challenges
 - **Bot detection workaround:** direct HTTP requests to Jiji returned 403 errors; Selenium with a real browser loaded the site without issue
 - **Geo-blocked ChromeDriver download:** Google Storage blocked automatic driver downloads from this network; resolved with a manual download from a GitHub mirror
@@ -93,7 +117,6 @@ Ridge coefficients confirm the EDA findings: property type and furnished status 
 
 ## Future Work
 - Train tree-based models (Random Forest, XGBoost) after completing further coursework on ensemble methods
-- Build an interactive Power BI dashboard for EDA and prediction visualization
 - Expand scraping to additional listing platforms
 - Re-incorporate `size_m2` if a more complete data source is found
 
