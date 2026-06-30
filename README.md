@@ -90,7 +90,7 @@ A 3-page interactive Power BI dashboard summarizing key insights and model perfo
 KPI summary, price distribution, and price breakdowns by location, property type, bedrooms, and furnished status.
 
 ### Page 2: Sub-City Comparison
-![Sub-City Comparison](dashboard/subcity_comparison.png)
+![Sub-City Comparison](dashboard/subcity_comparision.png)
 
 Interactive sub-city filtering with listing counts, property type mix, and a full price range summary table.
 
